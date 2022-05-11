@@ -1,7 +1,14 @@
 // import express library
 const express = require('express')
-// require the passport file
+// import mongoose
+const mongoose = require('mongoose')
+const keys = require('./config/keys')
+// require users model
+require('./models/User')
+// require passport
 require('./services/passport')
+// mongo connection
+mongoose.connect(keys.mongoURI)
 
 // generate a new running express app
 const app = express()
