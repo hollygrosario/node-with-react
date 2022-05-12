@@ -37,10 +37,6 @@ app.use(passport.session())
 // require authRoutes file that returns a function and pass the app instance to the function
 require('./routes/authRoutes')(app)
 
-app.get('/', (req, res) => {
-  res.send({ bye: 'buddy' })
-})
-
 // dynamically set the port
 const PORT = process.env.PORT || 3000
 // express is telling node to listen for traffic on this  port
