@@ -15,6 +15,12 @@ module.exports = app => {
   // second route handler for passport to exchange a code to get the profile info from google
   app.get('/auth/google/callback', passport.authenticate('google'))
 
+  // logout
+  app.get('/api/logout', (req, res) => {
+    req.logout()
+    res.send(req.user)
+  })
+
   // test route for auth
   app.get('/api/current_user', (req, res) => {
     res.send(req.user)
