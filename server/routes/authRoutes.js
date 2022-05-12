@@ -17,12 +17,14 @@ module.exports = app => {
 
   // logout
   app.get('/api/logout', (req, res) => {
+    console.log('req:', req.user)
     req.logout()
     res.send(req.user)
   })
 
   // test route for auth
   app.get('/api/current_user', (req, res) => {
+    console.log('req:', req.user)
     res.send(req.user)
   })
 }
