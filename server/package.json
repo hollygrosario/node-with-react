@@ -8,8 +8,9 @@
     "npm": "8.9.0"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+  "start": "node index.js",
+  "server": "nodemon index.js"
+  "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "",
   "license": "ISC",

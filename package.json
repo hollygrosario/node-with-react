@@ -1,1 +1,21 @@
-
+{
+  "name": "with-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "client": "cd client && npm start",
+  "server": "cd server && nodemon index.js",
+  "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hollygrosario/node-with-react.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hollygrosario/node-with-react/issues"
+  },
+  "homepage": "https://github.com/hollygrosario/node-with-react#readme"
+}
