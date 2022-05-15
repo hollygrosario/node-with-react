@@ -13,7 +13,8 @@ const keys = require('./config/keys')
 // require users model
 require('./models/User')
 // require passport
-require('./services/passport')
+require('./routes/services/passport')
+
 // mongo connection
 mongoose.connect(keys.mongoURI)
 
@@ -38,6 +39,6 @@ app.use(passport.session())
 require('./routes/authRoutes')(app)
 
 // dynamically set the port
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 // express is telling node to listen for traffic on this  port
 app.listen(PORT)
