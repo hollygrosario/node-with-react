@@ -13,10 +13,16 @@ import { FETCH_USER } from './types'
 
 // action creator
 // hijacking the dispatch function using thunk (middleware)
-const fetchUser = () => {
-  return function (dispatch) {
-    axios
-      .get('/api/current_user')
-      .then(res => dispatch({ type: FETCH_USER, payload: res }))
-  }
+// export const fetchUser = () => {
+//  return function (dispatch) {
+//  axios
+//  .get('/api/current_user')
+//  .then(res => dispatch({ type: FETCH_USER, payload: res }))
+// }
+// }
+
+export const fetchUser = () => async dispatch => {
+  // request made to the backend server for the current user
+  const res = await axios.get('/api/current_user')
+  dispatch({ type: FETCH_USER, payload: res.data })
 }
