@@ -15,7 +15,7 @@ class Header extends Component {
       default:
         return (
           <li>
-            <a>Logout</a>
+            <a href='/api/logout'>Logout</a>
           </li>
         )
     }
@@ -37,4 +37,4 @@ function mapStateToProps ({ auth }) {
   return { auth }
 }
 
-export default connect()(Header)
+export default connect(mapStateToProps)(Header)
