@@ -9,6 +9,7 @@ const mongoose = require('mongoose')
 // it contains the value stored in the cookie
 const cookieSession = require('cookie-session')
 const passport = require('passport')
+const bodyParser = require('body-parser')
 const keys = require('./config/keys')
 // require users model
 require('./models/User')
@@ -23,6 +24,8 @@ const app = express()
 
 // middlewares app.use
 
+// middleware to parse the body and assign to req.body req object
+app.use(bodyParser.json())
 // make use of cookies in the app
 // 30 days before expiration
 app.use(
@@ -37,6 +40,7 @@ app.use(passport.session())
 
 // require authRoutes file that returns a function and pass the app instance to the function
 require('./routes/authRoutes')(app)
+require('./routes/billingRoutes')(app)
 
 // dynamically set the port
 const PORT = process.env.PORT || 4000
