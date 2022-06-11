@@ -13,6 +13,8 @@ const bodyParser = require('body-parser')
 const keys = require('./config/keys')
 // require users model
 require('./models/User')
+// require surveys model
+require('./models/Surevy')
 // require passport
 require('./routes/services/passport')
 
