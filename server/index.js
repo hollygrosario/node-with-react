@@ -14,7 +14,7 @@ const keys = require('./config/keys')
 // require users model
 require('./models/User')
 // require surveys model
-require('./models/Surevy')
+require('./models/Survey')
 // require passport
 require('./routes/services/passport')
 
