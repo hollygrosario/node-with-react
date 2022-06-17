@@ -43,6 +43,7 @@ app.use(passport.session())
 // require authRoutes file that returns a function and pass the app instance to the function
 require('./routes/authRoutes')(app)
 require('./routes/billingRoutes')(app)
+require('./routes/surveyRoutes')(app)
 
 // dynamically set the port
 const PORT = process.env.PORT || 4000
