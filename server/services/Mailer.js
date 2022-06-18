@@ -34,6 +34,15 @@ class Mailer extends helper.Mail {
     trackingSettings = new helper.TrackingSettings()
     this.addTrackingSettings(trackingSettings)
   }
+
+  // rgister add recipients with the mailer
+  addRecipients () {
+    const personalize = new helper.Personalization()
+    this.recipients.forEach(recipient => {
+      personalize.addto(recipient)
+    })
+    this.addPersonalization(personalize)
+  }
 }
 
 module.exports = Mailer
