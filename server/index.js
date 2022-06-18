@@ -16,7 +16,7 @@ require('./models/User')
 // require surveys model
 require('./models/Survey')
 // require passport
-require('./routes/services/passport')
+require('../server/services/passport')
 
 // mongo connection
 mongoose.connect(keys.mongoURI)
