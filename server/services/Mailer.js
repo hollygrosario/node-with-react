@@ -33,7 +33,6 @@ class Mailer extends helper.Mail {
     const trackingSettings = new helper.TrackingSettings()
     const clickTracking = new helper.ClickTracking(true, true)
 
-    trackingSettings = new helper.TrackingSettings()
     this.addTrackingSettings(trackingSettings)
   }
 
@@ -41,7 +40,7 @@ class Mailer extends helper.Mail {
   addRecipients () {
     const personalize = new helper.Personalization()
     this.recipients.forEach(recipient => {
-      personalize.addto(recipient)
+      personalize.addTo(recipient)
     })
     this.addPersonalization(personalize)
   }
@@ -49,11 +48,11 @@ class Mailer extends helper.Mail {
   // send the mailer off to sendgrid for mailing
   async send () {
     const request = this.sgApi.emptyRequest({
-      method: 'post',
+      method: 'POST',
       path: '/v3/mail/send',
-      body: this.toJSON
+      body: this.toJSON()
     })
-    const response = this.sgApi.API(request)
+    const response = await this.sgApi.API(request)
     return response
   }
 }

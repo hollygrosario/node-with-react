@@ -22,7 +22,7 @@ passport.serializeUser((user, done) => {
 passport.deserializeUser(async (id, done) => {
   try {
     const user = await User.findById(id)
-    console.log('user:', user)
+  //  console.log('user:', user)
     done(null, user)
   } catch (e) {
     console.log('e:', e)
@@ -43,7 +43,7 @@ passport.use(
         const existingUser = await User.findOne({ googleId: profile.id })
         if (existingUser) {
           // we have a user already
-          console.log('existingUser:', existingUser)
+        //  console.log('existingUser:', existingUser)
           return done(null, existingUser)
         }
         // query the db and find one user with the matching  google id
