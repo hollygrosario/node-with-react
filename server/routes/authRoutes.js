@@ -28,9 +28,7 @@ module.exports = app => {
     res.redirect('/')
   })
 
-  // test route for auth
   app.get('/api/current_user', (req, res) => {
-    console.log('req:', req.user)
     res.send(req.user)
   })
 }
