@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import SurveyForm from './SurveyForm'
 import SurveyFormReview from './SurveyFormReview'
+import { reduxForm } from 'redux-form'
 
 class SurveyNew extends Component {
   // initialize component level state - long version vs shorthand below
@@ -38,4 +39,6 @@ class SurveyNew extends Component {
   }
 }
 
-export default SurveyNew
+export default reduxForm({
+  form: 'SurveyForm'
+})(SurveyNew)
