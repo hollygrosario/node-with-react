@@ -20,6 +20,7 @@ require('../server/services/passport')
 
 // mongo connection
 mongoose.connect(keys.mongoURI)
+//  everything from here up can pase into the node cli to test queries
 
 // generate a new running express app
 const app = express()
