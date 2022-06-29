@@ -11,6 +11,10 @@ import SurveyNew from './surveys/SurveyNew'
 // dummy component
 // const SurveyNew = () => <h2>Survey New</h2>
 
+// 180 redirect on submit outdated material
+// webhooks stuff not working wouldnt install ngrock
+// https://www.udemy.com/course/node-with-react-fullstack-web-development/learn/lecture/7607726#questions
+
 class App extends Component {
   componentDidMount () {
     this.props.fetchUser()
