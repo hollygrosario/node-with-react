@@ -6,5 +6,5 @@ import surveysReducer from './surveysReducer'
 export default combineReducers({
   auth: authReducer,
   form: reduxForm,
-  surveys: surveyReducer
+  surveys: surveysReducer
 })
